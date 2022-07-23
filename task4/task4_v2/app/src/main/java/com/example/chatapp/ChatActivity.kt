@@ -22,7 +22,7 @@ class ChatActivity : AppCompatActivity() {
         setContentView(view)
         initFirebase()
         setupSendButton()
-        /*createFirebaseListener()*/
+        createFirebaseListener()
 
 
     }

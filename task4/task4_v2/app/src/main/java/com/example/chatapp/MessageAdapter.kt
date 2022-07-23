@@ -25,7 +25,7 @@ class MessageAdapter(val messages: ArrayList<Message>, val itemClick: (Message) 
 
         fun bindForecast(message: Message) {
             with(message) {
-                var text : TextView = itemView.findViewById(R.id.enterMessage)
+                var text : TextView = itemView.findViewById(R.id.messageAdapterMessageItem)
                 text.text = message.text
                 itemView.setOnClickListener { itemClick(this) }
             }
