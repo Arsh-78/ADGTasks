@@ -1,5 +1,7 @@
 package com.example.chatapp
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -13,6 +15,12 @@ import com.google.firebase.ktx.Firebase
 class ChatActivity : AppCompatActivity() {
     private lateinit var binding : ActivityChatBinding
      var databaseReference : DatabaseReference? = null
+
+    companion object {
+        fun getLaunchIntent(from: Context) = Intent(from, ChatActivity::class.java).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        }
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
