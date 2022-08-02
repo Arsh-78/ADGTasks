@@ -16,6 +16,8 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var binding : ActivityChatBinding
      var databaseReference : DatabaseReference? = null
 
+
+
     companion object {
         fun getLaunchIntent(from: Context) = Intent(from, ChatActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -46,9 +48,9 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun initFirebase() {
-        FirebaseApp.initializeApp(applicationContext)
 
-        FirebaseDatabase.getInstance().setLogLevel(Logger.Level.DEBUG)
+
+        FirebaseApp.initializeApp(applicationContext)
 
         //get reference to our db
         databaseReference = FirebaseDatabase.getInstance().reference
